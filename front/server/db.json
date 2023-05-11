@@ -1,0 +1,96 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "title": "Чехол MagSafe Wallet",
+      "photo": "https://ir.ozone.ru/s3/multimedia-z/wc700/6573797519.jpg",
+      "price": 334,
+      "type": "Картхолдер для смартфона",
+      "view": "Кошелек",
+      "recommendation": "Apple",
+      "material": "Искусственная кожа",
+      "peculiarities": "Магнитное крепление",
+      "clasp": "Без застежки",
+      "manufacturer": "Китай"
+    },
+    {
+      "id": 2,
+      "title": "Силиконовый противоударный чехол",
+      "photo": "https://ir.ozone.ru/s3/multimedia-2/wc700/6640179842.jpg",
+      "price": 384,
+      "type": "Чехол для смартфона      ",
+      "view": "Бампер",
+      "recommendation": "Apple iPhone 13 Pro Max",
+      "material": "Силикон",
+      "peculiarities": "Без застежки",
+      "clasp": "Без застежки",
+      "manufacturer": "Китай"
+    },
+    {
+      "title": "",
+      "photo": "",
+      "price": "",
+      "id": 3
+    },
+    {
+      "title": "qefqef",
+      "photo": "",
+      "price": "",
+      "id": 4
+    },
+    {
+      "title": "qefqef",
+      "photo": "",
+      "price": "",
+      "id": 5
+    },
+    {
+      "title": "qefqefeee",
+      "photo": "",
+      "price": "",
+      "id": 6
+    },
+    {
+      "title": "qefqefeee",
+      "photo": "",
+      "price": "",
+      "id": 7
+    },
+    {
+      "title": "qefqefeee",
+      "photo": "",
+      "price": "",
+      "id": 8
+    },
+    {
+      "title": "Iphone 14",
+      "photo": "",
+      "price": "",
+      "id": 9
+    },
+    {
+      "title": "Iphone 14",
+      "photo": "https://avatars.mds.yandex.net/get-mpic/5346941/img_id3210180719940129596.jpeg/orig",
+      "price": "",
+      "id": 10
+    },
+    {
+      "title": "Iphone 14",
+      "photo": "https://avatars.mds.yandex.net/get-mpic/5346941/img_id3210180719940129596.jpeg/orig",
+      "price": "86400",
+      "id": 11
+    },
+    {
+      "title": "",
+      "photo": "",
+      "price": "",
+      "id": 12
+    },
+    {
+      "title": "Iphone 14 Pro Max",
+      "photo": "https://krd.store123.ru/upload/rbs.moyskladstocks/files/a7cdd847-1bea-40d7-8c8a-b3e367d2cafb/2e4d69bf0cb7af4946d73e3671d30df0/3ed/3i8qpzja8f5iv14tbvhaosmq42tux0ta.jpg",
+      "price": "123500",
+      "id": 13
+    }
+  ]
+}
