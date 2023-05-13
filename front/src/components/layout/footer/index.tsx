@@ -1,16 +1,18 @@
 import React from "react";
 import logo from "../../../assets/logo.svg";
 
+import { Link } from "react-router-dom";
+
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <img src={logo} alt="logo" />
+      <Link to="/">
+        <img src={logo} alt="logo" />
+      </Link>
       <div className="footer-link">
-        <a href="#">Избранное</a>
-        <a href="#">Корзина</a>
-        <a href="#">Контакты</a>
+        <Link to="/favorites">Избранное</Link>
+        <Link to="/favorites">Корзина</Link>
       </div>
-      <a href="#">Условия сервиса</a>
       <a href="#">будут ссылки на соц сети</a>
     </footer>
   );

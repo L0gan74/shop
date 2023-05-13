@@ -2,14 +2,14 @@ export interface IItem {
   id: number;
   title: string;
   photo: string;
-  price: number;
+  price: string;
 }
 
 export interface FullItemCases {
   id: number;
   title: string;
   photo: string;
-  price: number;
+  price: string;
   type: string;
   view: string;
   recommendation: string;

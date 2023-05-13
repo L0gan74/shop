@@ -1,61 +1,75 @@
-import { IItem } from "../../types/item";
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { getItemLocalStorage } from "../../utils/getItemLocalStorage";
+import { calcTotalPrice } from "../../utils/calcTotalPrice";
 
-interface Cart {
-  id: number;
-  title: string;
-  photo: string;
-  price: number;
-}
+const { items, totalPrice } = getItemLocalStorage();
 
-interface CartState {
-  items: Cart[];
-}
-
-const initialState: CartState = {
-  items: [],
+const initialState = {
+  items,
+  totalPrice,
 };
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem(state, action: PayloadAction<Cart>) {
-      const item = action.payload;
-      state.items.push(item);
-    },
-    // addItem: (state, action: PayloadAction<IProduct>) => {
-    //   const fintItem = state.items.find((obj) => obj.id === action.payload.id);
+    addItem: (state, action) => {
+      // @ts-ignore
+      const fintItem = state.items.find((obj) => obj.id === action.payload.id);
 
-    //   if (fintItem) {
-    //     fintItem.count++;
-    //   } else {
-    //     state.items.push({
-    //       ...action.payload,
-    //       count: 1,
-    //     });
-    //   }
-    //   state.totalPrice = state.items.reduce((sum, obj) => {
-    //     return obj.price * obj.count + sum;
-    //   }, 0);
-    // },
-    // minusItem: (state, action: PayloadAction<string>) => {
-    //   const fintItem = state.items.find((obj) => obj.id === action.payload);
-    //   if (fintItem) {
-    //     fintItem.count--;
-    //     fintItem.totalPrice--;
-    //   }
-    // },
-    // removeItem: (state, action: PayloadAction<string>) => {
-    //   state.items = state.items.filter((obj) => obj.id !== action.payload);
-    // },
-    // clearItems: (state) => {
-    //   state.items = [];
-    //   state.totalPrice = 0;
-    // },
+      if (fintItem) {
+        // @ts-ignore
+        fintItem.count++;
+      } else {
+        // @ts-ignore
+        state.items.push({
+          // @ts-ignore
+          ...action.payload,
+          // @ts-ignore
+          count: 1,
+        });
+      }
+      // @ts-ignore
+      state.totalPrice = calcTotalPrice(state.items);
+    },
+    minusItem: (state, action) => {
+      // @ts-ignore
+      const fintItem = state.items.find((obj) => obj.id === action.payload);
+      if (fintItem) {
+        // @ts-ignore
+        fintItem.count--;
+        // @ts-ignore
+        fintItem.totalPrice--;
+      }
+    },
+    removeItem: (state, action) => {
+      // @ts-ignore
+      state.items = state.items.filter((obj) => obj.id !== action.payload);
+    },
+    clearItems: (state) => {
+      state.items = [];
+      state.totalPrice = 0;
+    },
+    addFavorites: (state, action) => {
+      const fintFavorites = state.items.find(
+        // @ts-ignore
+        (obj) => obj.id === action.payload.id
+      );
+    },
+    deleteFavorites: (state, action) => {
+      // @ts-ignore
+      state.items = state.items.filter((obj) => obj.id !== action.payload);
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions;
+export const {
+  addItem,
+  removeItem,
+  minusItem,
+  clearItems,
+  addFavorites,
+  deleteFavorites,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

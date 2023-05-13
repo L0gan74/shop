@@ -1,14 +1,19 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { IItem } from "../../types/item";
 
-const Favorites = () => {
+const Favorites: React.FC = () => {
+  const { items } = useTypedSelector((state) => state.cart);
 
   return (
     <div>
       <h2>Favorites</h2>
-      
+      {items.map((item: IItem) => (
+        <div>
+          <p>{item.title}</p>
+          <button type="button">удалить из избранного</button>
+        </div>
+      ))}
     </div>
   );
 };

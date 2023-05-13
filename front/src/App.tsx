@@ -6,6 +6,7 @@ import Layout from "./components/layout";
 import ItemPage from "./pages/itemPage";
 import Basket from "./pages/basket";
 import Favorites from "./pages/favorites";
+import FormPage from "./pages/form";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/basket" element={<Basket />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/form" element={<FormPage />} />
           <Route path="product/:id" element={<ItemPage />} />
         </Routes>
       </div>

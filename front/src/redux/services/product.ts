@@ -26,7 +26,19 @@ export const productApi = createApi({
         },
       ],
     }),
+    deleteItem: builder.mutation<IItem, IItem>({
+      query: (id) => ({
+        url: `cases/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: () => [
+        {
+          type: "Recipe",
+        },
+      ],
+    }),
   }),
 });
 
-export const { useGetItemQuery, useCreateItemMutation } = productApi;
+export const { useGetItemQuery, useCreateItemMutation, useDeleteItemMutation } =
+  productApi;

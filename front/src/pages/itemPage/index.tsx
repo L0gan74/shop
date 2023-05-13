@@ -1,13 +1,12 @@
 import React from "react";
 import { useParams } from "react-router";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
 
 import style from "./style.module.css";
 import { FullItemCases } from "../../types/item";
 import favorites from "../../assets/favorites.svg";
 
-const ItemPage:React.FC = () => {
+const ItemPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [product, setproduct] = React.useState<FullItemCases | null>(null);
 
@@ -18,6 +17,8 @@ const ItemPage:React.FC = () => {
         setproduct(response.data);
       });
   }, [id]);
+
+
 
   return (
     <div className={style.item}>
